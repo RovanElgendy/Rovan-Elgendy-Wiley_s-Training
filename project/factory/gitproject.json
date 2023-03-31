@@ -1,0 +1,9 @@
+{
+	"name": "gitproject",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "94ff8703-4319-4aef-88df-ad9d57ce961d",
+		"tenantId": "0d750ad7-8f50-41af-9cae-c109332bf13a"
+	}
+}
