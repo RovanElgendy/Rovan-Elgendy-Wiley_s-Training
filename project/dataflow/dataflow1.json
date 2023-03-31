@@ -16,7 +16,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          Period as date 'yyyy-MM-dd',",
+				"          Period as date 'dd.MM.yyyy',",
 				"          Revenue as float,",
 				"          Sales_quantity as integer,",
 				"          Average_cost as float,",
