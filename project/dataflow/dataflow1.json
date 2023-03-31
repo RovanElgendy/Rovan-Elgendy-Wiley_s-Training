@@ -17,12 +17,15 @@
 				{
 					"name": "filteringNullValues",
 					"description": "filtering the null values which are 32 null values"
+				},
+				{
+					"name": "sort1"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
 				"          Period as date 'dd.MM.yyyy',",
-				"          Revenue as float,",
+				"          Revenue as decimal(10,0) '000,000,000.000',",
 				"          Sales_quantity as integer,",
 				"          Average_cost as float,",
 				"          The_average_annual_payroll_of_the_region as integer",
@@ -35,7 +38,8 @@
 				"",
 				"",
 				",",
-				"     partitionBy('hash', 1)) ~> filteringNullValues"
+				"     partitionBy('hash', 1)) ~> filteringNullValues",
+				"filteringNullValues sort(asc(Period, true)) ~> sort1"
 			]
 		}
 	}
