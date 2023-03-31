@@ -13,7 +13,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filteringNullValues",
+					"description": "filtering the null values which are 32 null values"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Period as date 'dd.MM.yyyy',",
@@ -25,7 +30,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     partitionBy('hash', 1)) ~> revenue1"
+				"     partitionBy('hash', 1)) ~> revenue1",
+				"revenue1 filter(!isNull(Revenue)",
+				"",
+				"",
+				",",
+				"     partitionBy('hash', 1)) ~> filteringNullValues"
 			]
 		}
 	}
