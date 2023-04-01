@@ -41,7 +41,7 @@
 				"revenue1 filter(!isNull(Revenue),",
 				"     partitionBy('hash', 1)) ~> filteringNullValues",
 				"filteringNullValues sort(asc(Period, true)) ~> sort1",
-				"sort1 aggregate(groupBy(Period = year(Period)),",
+				"sort1 aggregate(groupBy(Year = year(Period)),",
 				"     Mean_Revenue = toDecimal(avg(Revenue))) ~> MeanRevenueYearly"
 			]
 		}
