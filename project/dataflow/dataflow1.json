@@ -12,7 +12,30 @@
 					"name": "revenue1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "monthly_revenue_cleaned",
+						"type": "DatasetReference"
+					},
+					"name": "YearlyRevenue",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureDataLakeStorage2",
+						"type": "LinkedServiceReference"
+					}
+				},
+				{
+					"dataset": {
+						"referenceName": "MonthlyRevenue_FilteredandSortedinPeriod",
+						"type": "DatasetReference"
+					},
+					"name": "afterSortingandFiltering",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureDataLakeStorage2",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
 			"transformations": [
 				{
 					"name": "filteringNullValues",
@@ -48,7 +71,21 @@
 				"     Mean_Revenue = toDecimal(avg(Revenue)),",
 				"          Mean_Sales_quantity = toDecimal(avg(Sales_quantity)),",
 				"          Mean_cost_of_Production = toDecimal(avg(Average_cost))) ~> MeanRevenueYearly",
-				"sort1 derive(Year = year(Period)) ~> AddingYearColumn"
+				"sort1 derive(Year = year(Period)) ~> AddingYearColumn",
+				"MeanRevenueYearly sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> YearlyRevenue",
+				"sort1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> afterSortingandFiltering"
 			]
 		}
 	}

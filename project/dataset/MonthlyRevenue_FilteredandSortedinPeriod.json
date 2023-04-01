@@ -1,5 +1,5 @@
 {
-	"name": "monthly_revenue_cleaned",
+	"name": "MonthlyRevenue_FilteredandSortedinPeriod",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage2",
@@ -10,13 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "YearlyRevenue",
 				"folderPath": "Project/azure project",
 				"fileSystem": "historicaldata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []
