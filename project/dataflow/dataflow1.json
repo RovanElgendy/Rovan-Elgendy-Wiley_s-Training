@@ -82,13 +82,14 @@
 				"     saveOrder: 2) ~> YearlyRevenue",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     filePattern:'CleanedMonthlyRevenue',",
+				"     partitionFileNames:[''],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> afterSortingandFiltering"
+				"     saveOrder: 1,",
+				"     partitionBy('hash', 1)) ~> afterSortingandFiltering"
 			]
 		}
 	}
