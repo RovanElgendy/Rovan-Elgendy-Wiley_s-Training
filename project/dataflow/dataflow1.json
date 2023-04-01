@@ -78,14 +78,16 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> YearlyRevenue",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 2) ~> YearlyRevenue",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> afterSortingandFiltering"
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> afterSortingandFiltering"
 			]
 		}
 	}
