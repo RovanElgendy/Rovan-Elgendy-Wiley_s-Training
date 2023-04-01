@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "revenue1"
+				},
+				{
+					"dataset": {
+						"referenceName": "MonthlyRevenue_FilteredandSortedinPeriod",
+						"type": "DatasetReference"
+					},
+					"name": "MonthlyRevenueFilteredandSorted"
 				}
 			],
 			"sinks": [
@@ -64,6 +71,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     partitionBy('hash', 1)) ~> revenue1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> MonthlyRevenueFilteredandSorted",
 				"revenue1 filter(!isNull(Revenue),",
 				"     partitionBy('hash', 1)) ~> filteringNullValues",
 				"filteringNullValues sort(asc(Period, true)) ~> sort1",
