@@ -82,6 +82,7 @@
 				"     saveOrder: 2) ~> YearlyRevenue",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     filePattern:'CleanedMonthlyRevenue',",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
