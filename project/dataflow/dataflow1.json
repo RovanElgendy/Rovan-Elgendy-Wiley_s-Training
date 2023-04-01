@@ -20,6 +20,10 @@
 				},
 				{
 					"name": "sort1"
+				},
+				{
+					"name": "MeanRevenueYearly",
+					"description": "getting the mean revenue yearly"
 				}
 			],
 			"scriptLines": [
@@ -34,12 +38,11 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     partitionBy('hash', 1)) ~> revenue1",
-				"revenue1 filter(!isNull(Revenue)",
-				"",
-				"",
-				",",
+				"revenue1 filter(!isNull(Revenue),",
 				"     partitionBy('hash', 1)) ~> filteringNullValues",
-				"filteringNullValues sort(asc(Period, true)) ~> sort1"
+				"filteringNullValues sort(asc(Period, true)) ~> sort1",
+				"sort1 aggregate(groupBy(Period = year(Period)),",
+				"     Mean_Revenue = toDecimal(avg(Revenue))) ~> MeanRevenueYearly"
 			]
 		}
 	}
