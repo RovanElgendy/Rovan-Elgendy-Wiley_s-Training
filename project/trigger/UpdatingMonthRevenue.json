@@ -1,0 +1,29 @@
+{
+	"name": "UpdatingMonthRevenue",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2023-04-02T12:13:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"monthDays": [
+						-1
+					]
+				}
+			}
+		}
+	}
+}
