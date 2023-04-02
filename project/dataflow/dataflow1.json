@@ -17,6 +17,10 @@
 					"name": "YearlyRevenue"
 				},
 				{
+					"dataset": {
+						"referenceName": "CleanedMonthlyRevenue",
+						"type": "DatasetReference"
+					},
 					"name": "afterSortingandFiltering"
 				},
 				{
@@ -75,18 +79,20 @@
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['CleanedMonthlyRevenue'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 1,",
-				"     partitionBy('hash', 1),",
-				"     preCommands: [],",
-				"     postCommands: []) ~> afterSortingandFiltering",
+				"     partitionBy('hash', 1)) ~> afterSortingandFiltering",
 				"AddingYearColumn sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
+				"     umask: 0022,",
 				"     preCommands: [],",
-				"     postCommands: []) ~> AddingColumnYear"
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> AddingColumnYear"
 			]
 		}
 	}
