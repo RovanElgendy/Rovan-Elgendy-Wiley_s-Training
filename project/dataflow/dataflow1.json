@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "monthly_revenue_original",
+						"referenceName": "Monthly_Revenue_original",
 						"type": "DatasetReference"
 					},
 					"name": "revenue1"
@@ -14,26 +14,10 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "monthly_revenue_cleaned",
-						"type": "DatasetReference"
-					},
-					"name": "YearlyRevenue",
-					"rejectedDataLinkedService": {
-						"referenceName": "AzureDataLakeStorage2",
-						"type": "LinkedServiceReference"
-					}
+					"name": "YearlyRevenue"
 				},
 				{
-					"dataset": {
-						"referenceName": "MonthlyRevenue_FilteredandSortedinPeriod",
-						"type": "DatasetReference"
-					},
-					"name": "afterSortingandFiltering",
-					"rejectedDataLinkedService": {
-						"referenceName": "AzureDataLakeStorage2",
-						"type": "LinkedServiceReference"
-					}
+					"name": "afterSortingandFiltering"
 				},
 				{
 					"dataset": {
@@ -62,9 +46,9 @@
 			"scriptLines": [
 				"source(output(",
 				"          Period as date 'dd.MM.yyyy',",
-				"          Revenue as decimal(10,0) '000,000,000.000',",
-				"          Sales_quantity as integer,",
-				"          Average_cost as float,",
+				"          Revenue as float,",
+				"          Sales_quantity as float,",
+				"          Average_cost as integer,",
 				"          The_average_annual_payroll_of_the_region as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
@@ -82,30 +66,27 @@
 				"MeanRevenueYearly sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['YearlyRevenue'],",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 2,",
-				"     partitionBy('hash', 1)) ~> YearlyRevenue",
+				"     partitionBy('hash', 1),",
+				"     preCommands: [],",
+				"     postCommands: []) ~> YearlyRevenue",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['CleanedMonthlyRevenue'],",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 1,",
-				"     partitionBy('hash', 1)) ~> afterSortingandFiltering",
+				"     partitionBy('hash', 1),",
+				"     preCommands: [],",
+				"     postCommands: []) ~> afterSortingandFiltering",
 				"AddingYearColumn sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> AddingColumnYear"
+				"     skipDuplicateMapOutputs: true,",
+				"     preCommands: [],",
+				"     postCommands: []) ~> AddingColumnYear"
 			]
 		}
 	}
