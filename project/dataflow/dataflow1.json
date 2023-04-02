@@ -28,7 +28,11 @@
 						"referenceName": "AddingYearColumnToCleanedData",
 						"type": "DatasetReference"
 					},
-					"name": "AddingColumnYear"
+					"name": "AddingColumnYear",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureDataLakeStorage2",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
@@ -88,11 +92,13 @@
 				"     partitionBy('hash', 1)) ~> afterSortingandFiltering",
 				"AddingYearColumn sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['AddingYearColumnToCleanedData'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> AddingColumnYear"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> AddingColumnYear"
 			]
 		}
 	}
