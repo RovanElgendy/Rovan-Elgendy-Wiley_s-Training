@@ -1,0 +1,41 @@
+{
+	"name": "YearlyRevenue",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "YearlyRevenue",
+				"folderPath": "Project/azure project",
+				"fileSystem": "historicaldata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Year",
+				"type": "String"
+			},
+			{
+				"name": "Mean_Revenue",
+				"type": "String"
+			},
+			{
+				"name": "Mean_Sales_quantity",
+				"type": "String"
+			},
+			{
+				"name": "Mean_cost_of_Production",
+				"type": "String"
+			}
+		]
+	}
+}

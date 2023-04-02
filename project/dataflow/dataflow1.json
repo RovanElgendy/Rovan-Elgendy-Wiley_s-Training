@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "YearlyRevenue",
+						"type": "DatasetReference"
+					},
 					"name": "YearlyRevenue"
 				},
 				{
@@ -73,13 +77,20 @@
 				"sort1 derive(Year = year(Period)) ~> AddingYearColumn",
 				"MeanRevenueYearly sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          Year as string,",
+				"          Mean_Revenue as string,",
+				"          Mean_Sales_quantity as string,",
+				"          Mean_cost_of_Production as string",
+				"     ),",
 				"     partitionFileNames:['YearlyRevenue'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 2,",
-				"     partitionBy('hash', 1),",
-				"     preCommands: [],",
-				"     postCommands: []) ~> YearlyRevenue",
+				"     partitionBy('hash', 1)) ~> YearlyRevenue",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['CleanedMonthlyRevenue'],",
