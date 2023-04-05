@@ -5,7 +5,9 @@
 
 # Projects Paths:
   OOP Project : 2-Python/OOP_Group_proj.py
+  
   Data analysis Project: 3-Data Processing using python - Data Analysis/Youtube Trending Videos Analysis.ipynb
+  
   Ms Azure Project: project
   
 # Azure Project Websites:
