@@ -1,0 +1,22 @@
+.create-library-form input { width: 360px; }
+.create-library-form .library-upload-dropzone { height: 200px; }
+.create-library-form .library-upload-dropzone .dz-message { line-height: 200px; }
+div.library-info-container { align-items: flex-start; background-color: rgb(247, 251, 253); border: 0.5px solid rgb(35, 116, 187); border-radius: 2px; display: flex; justify-content: space-between; }
+div.library-info-container img { cursor: pointer; padding: 10px; }
+div.library-info-container .library-info-indicator { padding: 3px; }
+.input-underline { border-top: none; border-right: none; border-left: none; border-image: initial; border-bottom: 1px solid rgb(221, 221, 221); border-radius: 0px; box-shadow: none; }
+.maven-browser { display: flex; flex: 1 1 0%; flex-direction: column; }
+.maven-browser .top-fields { display: flex; flex-basis: auto; flex-shrink: 0; }
+.maven-browser .maven-browser-repo-select { margin-right: 8px; width: 160px; }
+.maven-browser .maven-browser-repo-select .select-toggle { height: 32px; width: 160px; }
+.maven-browser .maven-browser-repo-select .select-toggle label { line-height: 22px; }
+.maven-browser .results { flex: 1 1 0%; }
+.maven-browser .package-search:focus { border-color: rgb(35, 116, 187); box-shadow: rgb(35, 116, 187) 0px 0px 0px 1px; }
+.key-value-fields .form-field { margin-bottom: 0px; }
+.key-value-fields table { table-layout: fixed; }
+.key-value-fields table .icon--delete { cursor: pointer; visibility: hidden; }
+.key-value-fields table th { font-weight: 400; }
+.key-value-fields table td.key-value-row__value, .key-value-fields table th.key-value-row__key { }
+.key-value-fields table tr:hover .icon--delete { visibility: visible; }
+.key-value-fields table td.key-value-row__actions { vertical-align: top; }
+.key-value-fields table td.key-value-row__actions > i { align-items: center; display: flex; height: 30px; margin: 0px; }
