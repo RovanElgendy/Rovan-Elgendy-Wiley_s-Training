@@ -2,6 +2,8 @@
  Contains all C339 Contents of documents,python codes, sql queries.
  
  Contains OOP Project,Data analysis Project and MS Azure Project.
+ 
+ Website: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/ 
 
 # Projects Paths:
   OOP Project : 2-Python/OOP_Group_proj.py
@@ -18,3 +20,6 @@ Dashboard: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project
 
 Workspace Notebook: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/MonthlyRevenue_Workspace_Notebook
     or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_Project.html
+
+Workflow after triggering the ADF pipeline: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/5-%20After_Trigger_ThePipelineDF 
+  we can see the last two rows in the dataset updated.
