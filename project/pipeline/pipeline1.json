@@ -47,7 +47,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Repos/rovanelgendy@outlook.com/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/Azure Databricks Project notebook"
+					"notebookPath": "/Repos/rovanelgendy@outlook.com/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/Azure_Databricks_Project_notebook"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
