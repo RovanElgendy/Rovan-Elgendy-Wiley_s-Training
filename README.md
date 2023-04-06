@@ -16,10 +16,12 @@
 # Azure Project Websites:
 
 Dashboard: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/MonthlyRevenue_Dashboard_Databricks 
-  or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_dashboard.html
+
+   or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_dashboard.html
 
 Workspace Notebook: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/MonthlyRevenue_Workspace_Notebook
-    or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_Project.html
+
+   or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_Project.html
 
 Workflow after triggering the ADF pipeline: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/5-%20After_Trigger_ThePipelineDF 
   we can see the last two rows in the dataset updated.
