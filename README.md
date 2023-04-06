@@ -9,6 +9,7 @@
   Data analysis Project: 3-Data Processing using python - Data Analysis/Youtube Trending Videos Analysis.ipynb
   
   Ms Azure Project: project
+    Steps and Demo. of the project : project/Project_Steps_Demo
   
 # Azure Project Websites:
 
