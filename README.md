@@ -15,7 +15,7 @@
   
 # Azure Project Websites:
 
-Dashboard: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/MonthlyRevenue_Dashboard_Databricks 
+Dashboard: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/3-%20MonthlyRevenue_Dashboard_Databricks
 
    or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_dashboard.html
 
