@@ -19,7 +19,7 @@ Dashboard: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project
 
    or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_dashboard.html
 
-Workspace Notebook: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/MonthlyRevenue_Workspace_Notebook
+Workspace Notebook: https://rovanelgendy.github.io/Rovan-Elgendy-Wiley_s-Training/project/Project_Code_Demo/4-%20MonthlyRevenue_Workspace_Notebook.html
 
    or using Azure storage static website: https://relgendy.blob.core.windows.net/$web/Azure_Databricks_Project.html
 
